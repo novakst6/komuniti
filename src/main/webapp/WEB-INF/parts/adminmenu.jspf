@@ -1,0 +1,35 @@
+<%-- 
+    Document   : adminmenu
+    Created on : 8.6.2012, 21:27:20
+    Author     : novakst6
+--%>
+<%@ page pageEncoding="UTF-8" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+    <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <sec:authorize ifAnyGranted="ROLE_ADMIN,ROLE_ADMIN_CENTER">
+              <li class="nav-header">CENTRUM</li>
+              <li><a href="<spring:url value="/admin/activateUsers/show.htm" />"><b>Aktivace účtů (${CountUnactiveUsers.countUnactiveUsers})</b></a></li>
+              </sec:authorize>
+              <sec:authorize ifAnyGranted="ROLE_ADMIN">
+              <li class="nav-header">ADMIN</li>
+              <li><a href="<spring:url value="/admin/users/show.htm" />"><b>Uživatelé</b></a></li>
+              <li><a href="<spring:url value="/admin/center/show.htm" />"><b>Centra</b></a></li>
+              <li><a href="<spring:url value="/admin/message/show.htm" />"><b>Zprávy</b></a></li>
+              <li><a href="<spring:url value="/admin/config.htm" />"><b>Konfigurace</b></a></li>
+              <li><a href="<spring:url value="/admin/reactivate/show.htm" />"><b>Reaktivace uživatele</b></a></li>
+              </sec:authorize>
+              <sec:authorize ifAnyGranted="ROLE_ADMIN,ROLE_ADMIN_CONTENT">
+              <li class="nav-header">OBSAH</li>
+              <li><a href="<spring:url value="/admin/region/show.htm" />"><b>Regiony</b></a></li>
+              <li><a href="<spring:url value="/admin/tag/show.htm" />"><b>Štítky zboží</b></a></li>              
+              <li><a href="<spring:url value="/admin/file/show.htm" />"><b>Soubory</b></a></li>
+              <li><a href="<spring:url value="/admin/item/show.htm" />"><b>Zboží</b></a></li>
+              <li><a href="<spring:url value="/admin/item/union.htm" />"><b>Zboží - sloučení duplicit</b></a></li>
+              <li><a href="<spring:url value="/admin/offerTag/show.htm" />"><b>Kategorie nabídky</b></a></li>
+              <li><a href="<spring:url value="/admin/offer/show.htm" />"><b>Nabídky</b></a></li>             
+              <li><a href="<spring:url value="/admin/help/show.htm" />"><b>Nápověda</b></a></li>
+              </sec:authorize>
+            </ul>
+          </div>

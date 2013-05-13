@@ -1,0 +1,23 @@
+<%-- 
+    Document   : adminmenu
+    Created on : 8.6.2012, 21:27:20
+    Author     : novakst6
+--%>
+<%@ page pageEncoding="UTF-8" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Štítky</li>
+              <li><a href="<spring:url value="show.htm"/>">Vše</a></li>
+              <c:forEach items="${tags}" var="tag">
+
+                            <c:forEach items="${tag}" var="t">
+                                <li>
+                                <c:forEach begin="0" end="${t.index}">&nbsp;&nbsp;&nbsp;</c:forEach>
+                                   <a href="<spring:url value="show.htm?tag=${t.tag.id}&page=${page}"/>">${t.tag.name}</a>  
+                                </li>                
+                            </c:forEach>                   
+                </c:forEach>
+            </ul>
+          </div>

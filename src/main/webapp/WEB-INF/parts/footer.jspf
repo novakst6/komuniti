@@ -1,0 +1,32 @@
+<%-- 
+    Document   : footer
+    Created on : 6.6.2012, 16:22:14
+    Author     : novakst6
+--%>
+<%@ page pageEncoding="UTF-8" %>
+<%@taglib  prefix="spring" uri="http://www.springframework.org/tags" %>
+
+<footer>
+    <div class="container">
+        <p>Aplikace Komuniti &COPY; 2013 - novakst6[at]fel.cvut.cz</p>
+    </div>
+</footer>    
+    <script src="<spring:url value="/bootstrap/js/application.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/prettify.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/jquery.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-transition.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-alert.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-modal.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-dropdown.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-scrollspy.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-tab.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-tooltip.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-popover.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-button.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-collapse.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-carousel.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-typeahead.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/bootstrap-image-gallery.js"/>"></script>
+    <script src="<spring:url value="/bootstrap/js/load-image.js"/>"></script>
+</body>
+</html>

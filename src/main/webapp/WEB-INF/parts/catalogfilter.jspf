@@ -1,0 +1,37 @@
+<%-- 
+    Document   : adminmenu
+    Created on : 8.6.2012, 21:27:20
+    Author     : novakst6
+--%>
+<%@ page pageEncoding="UTF-8" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<div class="well sidebar-nav">
+    <form:form commandName="filterForm" action="show.htm" method="POST">
+        <ul class="nav nav-list">
+            <li class="nav-header">Štítky</li>
+            <c:forEach items="${tags}" var="tag" varStatus="tagStatus">
+                <li>
+                    <div>
+                        <span><form:checkbox path="idsItemTag" value="${tag[0].tag.id}"/>&nbsp;</span><span><a data-toggle="collapse" data-target="#filter-tags${tagStatus.index}"><i class="icon-chevron-down"></i>${tag[0].tag.name}</a></span>
+                    </div>
+                </li>  
+                <div class="collapse" id="filter-tags${tagStatus.index}">
+                    <c:forEach items="${tag}" var="t" begin="1">
+                        <li>
+                            <div>
+                                <span><c:forEach begin="1" end="${t.index}">&nbsp;&nbsp;&nbsp;&nbsp;</c:forEach></span>
+                                <span><form:checkbox path="idsItemTag" value="${t.tag.id}"/>&nbsp;</span><span>${t.tag.name}</span>
+                            </div>
+                        </li>                                     
+                    </c:forEach>
+                </div>                 
+            </c:forEach>                               
+        </ul>
+
+    </div>
+    <div class="control-group">
+        <button class="btn btn-primary pull-right" id="btn_filter_submit" type="submit">Filtruj</button> 
+    </div>
+</form:form>
